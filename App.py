@@ -3,7 +3,7 @@ import google.generativeai as genai
 
 # 1. AI API Configuration (Gemini Brain Setup)
 # Tula tuzi Google API key ithe takavi lagel
-API_KEY = "AQ.Ab8RN6KooiLAvsqp1Ap90N9apJ2esQqmVvnYW00CHd8IUpDUvQ"
+API_KEY = "AQ.Ab8RN6IWWfTG5tiVyOVqwRh5Yn_3eVSaeEBHo_9NqWPSrAdSfQ"
 genai.configure(api_key=API_KEY)
 
 # 2. Software cha Dashboard / Title (Look and Feel)
@@ -41,7 +41,7 @@ if st.button("Generate Marketing Content ✨"):
             
             try:
                 # Gemini Model call karne
-                model = genai.GenerativeModel('gemini-pro')
+                model = genai.GenerativeModel('gemini-1.5-flash')
                 response = model.generate_content(prompt)
                 
                 # 5. Output Screen Var Dakhvane
