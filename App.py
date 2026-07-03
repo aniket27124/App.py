@@ -6,7 +6,7 @@ import google.generativeai as genai
 # =====================================================================
 # FIXME: "YOUR_GEMINI_API_KEY_HERE" kaadhun tumchi real key taka.
 # For example: API_KEY = "AIzaSy..." (Inverted commas aslech pahijet)
-API_KEY = "AQ.Ab8RN6JxRLyLmzKcwQ6v7BCZGYBILBfVvFfc9av5etrjz0u34w"
+API_KEY = "AQ.Ab8RN6KOOt87Q2CHQME6D1oziImvQzuX1hak9C6c5exjxmTCUQ"
 
 # =====================================================================
 # 2. SOFTWARE DASHBOARD SETUP (Look and Feel)
