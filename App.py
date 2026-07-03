@@ -1,17 +1,24 @@
 import streamlit as st
 import google.generativeai as genai
 
-# 1. AI API Configuration (Gemini Brain Setup)
-# Tula tuzi Google API key ithe takavi lagel
-API_KEY = "AQ.Ab8RN6IWWfTG5tiVyOVqwRh5Yn_3eVSaeEBHo_9NqWPSrAdSfQ"
+# =====================================================================
+# 1. AI API CONFIGURATION (Gemini Brain Setup)
+# =====================================================================
+# FIXME: "YOUR_GEMINI_API_KEY_HERE" kaadhun tumchi real key taka.
+# For example: API_KEY = "AIzaSy..." (Inverted commas aslech pahijet)
+API_KEY = "AQ.Ab8RN6I75RcgATOdRS0gqXzR7wVIwdqEaP7exVKUbxFqAIPrFw"
 genai.configure(api_key=API_KEY)
 
-# 2. Software cha Dashboard / Title (Look and Feel)
+# =====================================================================
+# 2. SOFTWARE DASHBOARD SETUP (Look and Feel)
+# =====================================================================
 st.set_page_config(page_title="Local Business AI Marketer", page_icon="🚀")
 st.title("🚀 Local Business AI Marketer Software")
 st.write("Tumchya dukanacha nav ani type taka, AI tumchyasathi Marathi-English mix marketing content banvel!")
 
-# 3. User Inputs (Client kadun mahiti ghenyasathi boxes)
+# =====================================================================
+# 3. USER INPUTS (Client kadun mahiti ghenyasathi boxes)
+# =====================================================================
 business_name = st.text_input("🏪 Dukanache / Business che Nav:")
 business_type = st.selectbox(
     "📊 Business cha Type niwda:",
@@ -19,7 +26,9 @@ business_type = st.selectbox(
 )
 special_offer = st.text_input("🎁 Kahich special offer aahe ka? (Optional - e.g., 20% Discount, Free Trial)")
 
-# 4. Prompt Engineering Setup (Internal Brain)
+# =====================================================================
+# 4. PROMPT ENGINEERING & GENERATION (Internal Brain)
+# =====================================================================
 if st.button("Generate Marketing Content ✨"):
     if business_name:
         with st.spinner("AI tumchyasathi vichar karat aahe... 🧠"):
@@ -40,7 +49,7 @@ if st.button("Generate Marketing Content ✨"):
             """
             
             try:
-                # Gemini Model call karne
+                # 🚀 Gemini 1.5 Flash Model Navin API sathi setup kela aahe
                 model = genai.GenerativeModel('gemini-1.5-flash')
                 response = model.generate_content(prompt)
                 
@@ -51,6 +60,7 @@ if st.button("Generate Marketing Content ✨"):
                 st.markdown("---")
                 
             except Exception as e:
-                st.error("Kuthetari gadbad zali. Krupaya tumchi API Key check kara.")
+                # Actual error dakhvnyasathi st.error update kela aahe
+                st.error(f"Kuthetari gadbad zali. API Key barobar aahe ka check kara. Error: {e}")
     else:
         st.warning("Plz pahile dukanache nav taka!")
