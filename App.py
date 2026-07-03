@@ -6,7 +6,21 @@ import google.generativeai as genai
 # =====================================================================
 # FIXME: "YOUR_GEMINI_API_KEY_HERE" kaadhun tumchi real key taka.
 # For example: API_KEY = "AIzaSy..." (Inverted commas aslech pahijet)
-API_KEY = st.text_input("AQ.Ab8RN6KcHkVNeA-BbRHdoOYaQvJp-cHCz-0IRLm9T1jkWradpg")
+API_KEY = st.text_input("curl "https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent" \
+  -H 'Content-Type: application/json' \
+  -H 'X-goog-api-key: AQ.Ab8RN6KcHkVNeA-BbRHdoOYaQvJp-cHCz-0IRLm9T1jkWradpg' \
+  -X POST \
+  -d '{
+    "contents": [
+      {
+        "parts": [
+          {
+            "text": "Explain how AI works in a few words"
+          }
+        ]
+      }
+    ]
+  }'")
 genai.configure(api_key=API_KEY)
 
 # =====================================================================
